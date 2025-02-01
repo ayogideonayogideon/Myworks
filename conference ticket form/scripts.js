@@ -1,6 +1,7 @@
 document.getElementById('ticketForm').addEventListener('submit', function(event) {
     event.preventDefault();
     
+    // Get form values
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const phone = document.getElementById('phone').value;
@@ -8,30 +9,38 @@ document.getElementById('ticketForm').addEventListener('submit', function(event)
     const quantity = document.getElementById('quantity').value;
     const categories = Array.from(document.getElementById('Category').selectedOptions).map(option => option.text).join(', ');
 
+    // Calculate total price
+    const totalPrice = calculatePrice(ticketType, quantity);
+
+    // Update output section
     const output = document.getElementById('output');
     output.innerHTML = `
-        <p>Name: ${name}</p>
-        <p>Email: ${email}</p>
-        <p>Phone: ${phone}</p>
-        <p>Ticket Type: ${ticketType}</p>
-        <p>Quantity: ${quantity}</p>
-        <p>Category: ${categories}</p>
-        <p>Total Price: ₦${calculatePrice(ticketType, quantity)}</p>
+        <h3>Thank you for registering! Here are your registration details:</h3>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Ticket Type:</strong> ${ticketType}</p>
+        <p><strong>Quantity:</strong> ${quantity}</p>
+        <p><strong>Category:</strong> ${categories}</p>
+        <p><strong>Total Price:</strong> ₦${totalPrice.toLocaleString()}</p>
     `;
+
+    // Show output section
+    output.classList.remove('hidden');
 });
 
 function calculatePrice(ticketType, quantity) {
     let pricePerTicket;
     switch(ticketType) {
         case 'vip':
-            pricePerTicket = 1000;
+            pricePerTicket = 15000; // VIP ticket price in ₦
             break;
         case 'student':
-            pricePerTicket = 500;
+            pricePerTicket = 5000; // Student ticket price in ₦
             break;
         case 'standard':
         default:
-            pricePerTicket = 800;
+            pricePerTicket = 8000; // Standard ticket price in ₦
             break;
     }
     return pricePerTicket * quantity;

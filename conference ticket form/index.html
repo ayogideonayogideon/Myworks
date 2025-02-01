@@ -33,12 +33,20 @@
             <select id="Category" name="Category" multiple>
                 <option value="Category 1">Category 1: FRONTEND WEB DESIGN</option>
                 <option value="Category 2">Category 2: DATA ANALYSIS</option>
-                <option value="Category 3">Cateory 3: CYBER SECURITY</option>
+                <option value="Category 3">Category 3: CYBER SECURITY</option>
             </select>
 
             <button type="submit">Submit</button>
         </form>
-        <div id="output"></div>
+        <div id="output" class="hidden">
+            <h3>Thank you for registering, here  are your Registration Details</h3>
+            <p><strong>Name:</strong> <span id="outputName"></span></p>
+            <p><strong>Email:</strong> <span id="outputEmail"></span></p>
+            <p><strong>Phone Number:</strong> <span id="outputPhone"></span></p>
+            <p><strong>Ticket Type:</strong> <span id="outputTicketType"></span></p>
+            <p><strong>Quantity:</strong> <span id="outputQuantity"></span></p>
+            <p><strong>Category:</strong> <span id="outputCategory"></span></p>
+        </div> 
     </div>
     <script src="scripts.js"></script>
 </body>

@@ -1,52 +1,98 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-    margin: 0;
+    min-height: 100vh;
 }
 
 .container {
-    background-color: white;
+    background-color: #fff;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
     width: 100%;
-    text-align: center;
+    max-width: 400px;
 }
 
 h2 {
+    text-align: center;
     margin-bottom: 20px;
+    color: #333;
 }
 
-form label {
-    display: block;
-    margin: 10px 0 5px;
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
 }
 
-form input, form select, form button {
-    width: calc(100% - 20px);
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+select {
+    width: 100%;
     padding: 10px;
-    margin: 5px 0;
+    margin-bottom: 15px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 4px;
+    font-size: 16px;
 }
 
-form button {
-    background-color: #007BFF;
-    color: white;
+select[multiple] {
+    height: 100px;
+}
+
+button {
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-form button:hover {
-    background-color: #0056b3;
+button:hover {
+    background-color: #218838;
 }
 
+/* Output Section Styles */
 #output {
     margin-top: 20px;
+    padding: 15px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    color: #333;
+}
+
+#output h3 {
+    margin-top: 0;
+    color: #28a745;
+}
+
+#output p {
+    margin: 10px 0;
     font-size: 16px;
+}
+
+#output p strong {
+    color: #555;
+}
+
+/* Hidden Class */
+.hidden {
+    display: none;
 }
